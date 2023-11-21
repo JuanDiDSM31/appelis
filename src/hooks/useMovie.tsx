@@ -11,11 +11,11 @@ interface MoviesState {
 export const useMovie = () => {
   const [MovieState, setMovieState] = useState<MoviesState>({
     nowPlaying: [],
-  popular: [],
-  topRated: [],
-  upComing: [],
+    popular: [],
+    topRated: [],
+    upComing: [],
   });
-   const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(true);
 
   const getMovies = async () => {
     const nowPlayingPromise = MovieApi.get<MovieDBNowPlaying>('now_playing');
@@ -30,9 +30,9 @@ export const useMovie = () => {
     ]);
     setMovieState({
       nowPlaying: resp[0].data.results,
-      popular:    resp[1].data.results,
-      topRated:   resp[2].data.results,
-      upComing:   resp[3].data.results,
+      popular: resp[1].data.results,
+      topRated: resp[2].data.results,
+      upComing: resp[3].data.results,
     });
     setisLoading(false);
   };
@@ -42,7 +42,7 @@ export const useMovie = () => {
   }, []);
 
   return {
-   ...MovieState,
+    ...MovieState,
     isLoading,
   };
 };

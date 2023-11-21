@@ -19,13 +19,13 @@ export const Home = () => {
   const {nowPlaying, isLoading, popular, topRated, upComing} = useMovie();
   // console.log(peliculasEnCine[1]?.title);
 
- if (isLoading) {
-   return (
-     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-       <ActivityIndicator color="red" size={200} />
-     </View>
-   );
- }
+  if (isLoading) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <ActivityIndicator color="red" size={200} />
+      </View>
+    );
+  }
   return (
     <ScrollView>
       <View style={{marginTop: top + 20}}>

@@ -8,7 +8,7 @@ interface p {
   title?: string;
 }
 export const HorizontalSlider = ({movies, title}: p) => {
-  const {peliculasEnCine, isLoading} = useMovie();
+  // const {peliculasEnCine, isLoading} = useMovie();
 
   return (
     <View style={{height: title ? 250 : 230}}>
