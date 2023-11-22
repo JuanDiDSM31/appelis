@@ -6,6 +6,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useMovieDetails } from '../hooks/useMovieDetails';
+import { MovieDetail } from '../components/MovieDetail';
 
 const di = Dimensions.get('screen').height;
 interface Props extends StackScreenProps<RootStackParams, 'Detail'> {}
@@ -29,13 +30,14 @@ export const Detail = ({route}: Props) => {
         </View>
       </View>
       <View style={styles.marginContainer}>
-        <Text style={styles.subtitulo}>{nom}</Text>
-        <Text style={styles.titulo}>{nomEs}</Text>
+        <Text style={{...styles.subtitulo, color:'black'}}>{nom}</Text>
+        <Text style={{...styles.titulo, color:'black'}}>{nomEs}</Text>
       </View>
       <View>
         {
-          isLoading ? <ActivityIndicator style={styles.marginContainer} size={100} color="grey" />: <Text>Juan</Text>
-        }
+          isLoading ? <ActivityIndicator style={styles.marginContainer} size={100} color="black" />: 
+          <MovieDetail  />
+}
       </View>
     </ScrollView>
   );
