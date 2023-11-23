@@ -38,7 +38,7 @@ export const Home = () => {
           />
         </View>
 
-        <HorizontalSlider title="Populares" movies={popular} />
+        <HorizontalSlider title="Populares " movies={popular} />
         <HorizontalSlider title="Mejor calificadas" movies={topRated} />
         <HorizontalSlider title="Proximas" movies={upComing} />
       </View>

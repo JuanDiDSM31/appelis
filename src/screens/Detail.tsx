@@ -33,12 +33,12 @@ export const Detail = ({route}: Props) => {
         <Text style={{...styles.subtitulo, color:'black'}}>{nom}</Text>
         <Text style={{...styles.titulo, color:'black'}}>{nomEs}</Text>
       </View>
-      <View>
+      
         {
           isLoading ? <ActivityIndicator style={styles.marginContainer} size={100} color="black" />: 
-          <MovieDetail  />
+          <MovieDetail  cast={cast} moviefull={moviefull!}/>
 }
-      </View>
+      
     </ScrollView>
   );
 };
